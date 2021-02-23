@@ -1,6 +1,3 @@
-[01]: http://example.com/  "Optional Title Here"
-
-
 # Tkinter_Basic_1
 
 ## Featured pictures
