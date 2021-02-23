@@ -72,14 +72,20 @@ class APP:
     def update(self):
         if self.w == self.div2.winfo_width() and self.h ==self.div2.winfo_height():
             self.reszie_time = time.time()
-        
-        if self.w != self.div2.winfo_width() or self.h !=self.div2.winfo_height():
-            if time.time()-self.reszie_time>= self.resize_rate and self.im is not '':
-                self.w, self.h = self.div2.winfo_width(), self.div2.winfo_height()    
-                self.imTK = ImageTk.PhotoImage( self.im.resize( (self.w, self.h) ) )
-                self.lbl_img.configure(image=self.imTK)
-                self.lbl_img.image = self.imTK             
-                
+
+        if (
+            (
+                self.w != self.div2.winfo_width()
+                or self.h != self.div2.winfo_height()
+            )
+            and time.time() - self.reszie_time >= self.resize_rate
+            and self.im is not ''
+        ):
+            self.w, self.h = self.div2.winfo_width(), self.div2.winfo_height()    
+            self.imTK = ImageTk.PhotoImage( self.im.resize( (self.w, self.h) ) )
+            self.lbl_img.configure(image=self.imTK)
+            self.lbl_img.image = self.imTK             
+
         self.window.after(10, self.update)   # 5 是毫秒    
 
     def bt1_event(self):
