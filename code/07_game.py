@@ -30,8 +30,7 @@ class APP:
 
     def cv2_pil(self, im):
         im_rgb = cv2.cvtColor(im, cv2.COLOR_BGR2RGBA)
-        im_pil = Image.fromarray(im_rgb)
-        return im_pil
+        return Image.fromarray(im_rgb)
 
     def stream(self):
 
@@ -53,20 +52,20 @@ class APP:
         if quit_check:
 
             quit_check = tk.messagebox.askokcancel('提示', '可是我會想你欸，確定要退出?')
-            if quit_check:
+        if quit_check:
 
-                quit_check = tk.messagebox.askokcancel('提示', '不要離開我拉')
-                if quit_check:            
+            quit_check = tk.messagebox.askokcancel('提示', '不要離開我拉')
+        if quit_check:        
 
-                    quit_check = tk.messagebox.askokcancel('提示', '拜託不要拉')
-                    if quit_check:
+            quit_check = tk.messagebox.askokcancel('提示', '拜託不要拉')
+        if quit_check:
 
-                        quit_check = tk.messagebox.askokcancel('提示', '再給你最後一次機會哦！')
-                        if quit_check:                        
+            quit_check = tk.messagebox.askokcancel('提示', '再給你最後一次機會哦！')
+        if quit_check:                    
 
-                            quit_check = tk.messagebox.askokcancel('提示', '沒良心的使用者...')
-                            if quit_check:                        
-                                self.exit()
+            quit_check = tk.messagebox.askokcancel('提示', '沒良心的使用者...')
+        if quit_check:                        
+            self.exit()
 
 APP()
 # %%

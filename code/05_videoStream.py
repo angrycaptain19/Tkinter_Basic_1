@@ -32,8 +32,7 @@ class APP:
 
     def cv2_pil(self, im):
         im_rgb = cv2.cvtColor(im, cv2.COLOR_BGR2RGBA)
-        im_pil = Image.fromarray(im_rgb)
-        return im_pil
+        return Image.fromarray(im_rgb)
 
     def stream(self):
 
